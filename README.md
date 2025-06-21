@@ -41,6 +41,56 @@ git init
 git add .
 git commit -m "Initial project setup"
 
+# Create a new repository on GitHub
+
+Go to github.com and log in
+Click the "+" button in the top right
+Select "New repository"
+Name your repository (e.g., "setup_best_practice_python")
+Don't initialize with README (since you already have a local repo)
+Click "Create repository"
+
+# If you're using HTTPS:
+# Replace YOUR-USERNAME and YOUR-REPOSITORY-NAME with your actual GitHub username and repository name
+git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY-NAME.git
+
+# Verify the remote was added correctly
+git remote -v
+
+# Push your code to GitHub (if your main branch is called "main")
+git push -u origin main
+
+# OR if your main branch is called "master"
+git push -u origin master
+
+# If you prefer using SSH (make sure you have SSH keys set up):
+# Replace YOUR-USERNAME and YOUR-REPOSITORY-NAME with your actual GitHub username and repository name
+git remote add origin git@github.com:YOUR-USERNAME/YOUR-REPOSITORY-NAME.git
+
+# Verify the remote was added correctly
+git remote -v
+
+# Push your code
+git push -u origin main  # or master
+
+# After this, for future changes you can simply use:
+git add .
+git commit -m "Your commit message"
+git push
+
+# The -u flag in the first push sets up tracking, so you won't need to specify origin main in future pushes.
+# git remote -v 
+# Remove the existing remote origin
+git remote remove origin
+
+# Add your new remote origin
+git remote add origin https://github.com/Andhar7/python_setup.git
+
+# Verify the new remote was added correctly
+git remote -v
+# After this, you should be able to push your code to the new repository:
+git push -u origin main  # or 'master' if that's your branch name
+
 Remember:
 
 Always activate venv before installing packages
